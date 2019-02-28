@@ -1,0 +1,5 @@
+https://www.cbsnews.com/
+
+class= "item__anchor"
+href = "for the link"
+h4 text().trim() for the title
