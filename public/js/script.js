@@ -2,37 +2,12 @@
 $(document).ready(() => {
 
   $.ajax({
-    url: "/scrape",
+    url: "/articles",
     method: "GET"
   }).then(response => {
-
-  })
-    // Then, we load that into cheerio and save it to $ for a shorthand selector
-    var $ = cheerio.load(response.data);
-    const articleArr = [];
-
-    // Now we grab every h2 within an article tag, and do the following
-    $("article h2").each(function (i, element) {
-      // Save an empty result object
-      var result = {};
-
-      // Add the text and href of every link, and save them as properties
-      Result.title = $(this)
-        .children("a")
-        .text();
-      result.link = $(this)
-        .children("a")
-        .attr("href");
-
-      articleArr.push(result);
-
-      $(".col-8").append(articleArr);
-
+      $("#articles").text(response);
     });
   });
-});
-
-
 
 // // Grab the articles as a json
 // $(document).ready(function() {

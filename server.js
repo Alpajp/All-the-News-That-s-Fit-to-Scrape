@@ -55,14 +55,14 @@ app.get("/scrape", function (req, res) {
         const articleArr = [];
 
         // Now we grab every h2 within an article tag, and do the following
-        $("article h2").each(function (i, element) {
+        $(".item").each(function (i, element) {
             // Save an empty result object
             var result = {};
 
             // Add the text and href of every link, and save them as properties
-            Result.title = $(this)
-                .children("a")
-                .text();
+            result.title = $(this)
+                .find(".item__hed")
+                .text().trim();
             result.link = $(this)
                 .children("a")
                 .attr("href");
@@ -71,6 +71,9 @@ app.get("/scrape", function (req, res) {
 
 
         });
+
+        console.log("Scrapped data: ",articleArr);
+        
 
         // Create a new Article using the 'result' object built from scrape
         db.Article.create(articleArr)
