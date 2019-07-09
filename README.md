@@ -11,3 +11,6 @@ Technology Used
 * Express 
 * Axios 
 * Cheerio 
+
+
+![NewsScrape](https://user-images.githubusercontent.com/45401358/60909797-28129a00-a24d-11e9-9b53-17f911cab8a9.PNG)
